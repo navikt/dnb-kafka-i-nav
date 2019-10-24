@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Kafka i NAV</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/monokai.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h2>Tidslinje</h2>
+				<section>Høsten 2017 - Kafka installert server side</section>
+				<section>2018 - Sykemelding og Oppfølging på Kafka</section>
+				<section>H1 2019 - Dagpenger gjør behandling av søknader gjennom Kafka</section>
+				<section>H2 2019 - Personbruker, Henvendelse, PAM begynner å ta i bruk Kafka for å reagere på hendelser
+				</section>
+			</section>
+			<section>
+				<h2>Konfigurasjon</h2>
+				<section>
+					<aside class="notes">
+						Sparring på ønsket tilgjengelighet vs diskbruk, minnebruk og nettverksbruk
+					</aside>
+					Default 7 dagers retensjon
+				</section>
+				<section>Default 3 replicas</section>
+				<section>Default 3 partisjoner</section>
+			</section>
+			<section>
+				<h2>Spec</h2>
+				<section>4 clustere</section>
+				<section>
+					<aside class="notes">
+						Diskuter smartheten i å velge partall antall noder relatert til quorum og consensus algoritmer
+					</aside>
+					<ul>
+						<li>Utvikling - 6 noder</li>
+						<li>
+							<ul>
+								<li>2CPU</li>
+								<li>2G RAM</li>
+								<li>40G disk</li>
+								<li>3 noder zookeeper</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>Test - 3 noder</li>
+						<li>
+							<ul>
+								<li>2CPU</li>
+								<li>2G RAM</li>
+								<li>100G disk</li>
+								<li>3 noder zookeeper</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>Preprod - 3 noder</li>
+						<li>
+							<ul>
+								<li>4CPU</li>
+								<li>8G RAM</li>
+								<li>500G disk</li>
+								<li>3 noder zookeeper</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<aside class="notes">
+						Diskuter smartheten i å velge partall antall noder relatert til quorum og consensus algoritmer
+					</aside>
+					<ul>
+						<li>Prod - 6 noder</li>
+						<li>
+							<ul>
+								<li>4CPU</li>
+								<li>12G RAM</li>
+								<li>500G disk</li>
+								<li>3 noder zookeeper</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+			</section>
+		</div>
+	</div>
+
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true }
+			]
+		});
+	</script>
+</body>
+
+</html>
