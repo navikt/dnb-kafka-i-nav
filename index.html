@@ -28,11 +28,39 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
+				<blockquote>En eller annen må ha ført falskt vitnesbyrd mot Josef K., for en morgen ble han arrestert
+					uten å
+					ha gjort noe galt</blockquote>
+			</section>
+			<section>
 				<h2>Tidslinje</h2>
 				<section>Høsten 2017 - Kafka installert server side</section>
 				<section>2018 - Sykemelding og Oppfølging på Kafka</section>
 				<section>H1 2019 - Dagpenger gjør behandling av søknader gjennom Kafka</section>
 				<section>H2 2019 - Personbruker, Henvendelse, PAM begynner å ta i bruk Kafka for å reagere på hendelser
+				</section>
+			</section>
+			<section>
+				<h2>Bruksmønstere</h2>
+				<section>
+					<aside class="notes">
+						- Man strømmer data med unike nøkler, utnytter seg av kafka sin compaction strategi
+						- Leser så fra start av topic ved oppstart, eller speiler topicet inn i lokal database hvor man
+						kun tar vare på feltene teamet/løsningen trenger
+					</aside>
+					Datastrømmer - Kafka som master
+				</section>
+				<section>
+					Hendelser - Mange konsumenter som reagerer på en ting som skjer i en applikasjon
+				</section>
+				<section>
+					<aside class="notes">Ville ikke anbefalt dette, knytter konsument og produsent for tett sammen
+						- Hvis man sender hendelsen - CV lagt til så trenger ikke produsent å vite hvem som leser/hva
+						som gjøres
+						- Hvis man sender kommandoen - IndekserCV så har den en mer direkte adressat.
+						- fortsatt ingenting som hindrer andre konsumenter å lese denne
+					</aside>
+					Kommando - Produsent sender en målrettet kommando;
 				</section>
 			</section>
 			<section>
